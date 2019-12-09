@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Number System Converter</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Convert binary decimal, octal and hexadecimal numbers">
+    <meta name="author" content="Denniel Luis Saway Sadian">
+    <meta name="date" content="July 7, 2018">
+    <link rel="icon" href="resources/esti_icon.png">
+
+    <link rel="stylesheet" href="resources/w3.css">
+    <script src="resources/jquery.min.js"></script>
+    <script src="resources/angular.min.js"></script>
+
+    <style>
+        #head,
+        footer {
+            background: linear-gradient(to bottom right, #87CEEB, violet);
+        }
+
+        .tab-btn {
+            border-radius: 10px 10px 0px 0px;
+        }
+
+        article {
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        footer {
+            padding-top: 80px !important;
+            padding-bottom: 80px !important;
+        }
+
+        .w3-button {
+            background: #ccc;
+            color: black;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+
+<body class="w3-light-gray">
+
+    <div ng-app="converter" ng-controller="myCtrl" ng-init="colorClicked()">
+        <div id="head" class="w3-purple">
+            <header class="w3-container w3-center" style="padding:20px">
+                <img src="resources/esti_icon.png" width="80" height="80">
+                <h1 style="letter-spacing:4px">Number System Converter</h1>
+                <h4 class="w3-opacity">Educational Systems Technological Institute</h4>
+            </header>
+            <div class="w3-bar w3-block">
+                <div class="w3-content w3-large">
+                    <button ng-click="changeTo('bin')" id="bin-btn"
+                        class="tab-btn w3-bar-item w3-button w3-margin-left">Bin</button>
+                    <button ng-click="changeTo('dec')" id="dec-btn" class="tab-btn w3-bar-item w3-button">Dec</button>
+                    <button ng-click="changeTo('oct')" id="oct-btn" class="tab-btn w3-bar-item w3-button">Oct</button>
+                    <button ng-click="changeTo('hex')" id="hex-btn" class="tab-btn w3-bar-item w3-button">Hex</button>
+                </div>
+            </div>
+        </div>
+        <div class="w3-container">
+            <div class="w3-content w3-margin-top">
+                <h4 id="remainder" class="w3-opacity"></h4>
+                <input id='main-input' type="text" placeholder="{{clicked}}" class="w3-input w3-border w3-border-black w3-padding
+				          w3-margin-bottom w3-hover-border-green
+						  w3-round" ng-model="toConvert" ng-change="onInput()">
+                <div class="bin w3-panel w3-teal w3-round">
+                    <h3>Binary</h3>
+                    <p id="bin-res" class="w3-large">=</p>
+                </div>
+                <div class="dec w3-panel w3-blue w3-round">
+                    <h3>Decimal</h3>
+                    <p id="dec-res" class="w3-large">=</p>
+                </div>
+                <div class="oct w3-panel w3-purple w3-round">
+                    <h3>Octal</h3>
+                    <p id="oct-res" class="w3-large">=</p>
+                </div>
+                <div class="hex w3-panel w3-pink w3-round">
+                    <h3>Hexadecimal</h3>
+                    <p id="hex-res" class="w3-large">=</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <article class="w3-container w3-center">
+        <h2>Programmers</h2>
+        <div class="w3-large">
+            <p>Anna Marie Tenorio</p>
+            <p>Shielo Ann Mutar</p>
+            <p>Realyn Logatoc</p>
+            <p>Shaila Marie Semilla</p>
+            <p>Rica Maderazo</p>
+            <p>Kimberly Espinido</p>
+        </div>
+        <h2>Technologies used</h2>
+        <div class="w3-large">
+            <p><b>HTML</b><br> For the structure.</p>
+            <p><b>CSS</b><br> For the styles.</p>
+            <p><b>JavaScript</b><br> For programming.</p>
+            <p><b>w3.css</b><br> A CSS framework provided by W3Schools.com for responsiveness.</p>
+            <p><b>Angular.js</b><br> JS framework provided by Google for rapid development of single page applications.
+            </p>
+        </div>
+    </article>
+
+    <footer class="w3-container w3-center w3-text-white">
+        <div class="w3-content">
+            <h1>"If it works, do not touch it, honey."</h1>
+            <p>- Anyone who codes</p>
+        </div>
+    </footer>
+
+    <script src="resources/main.js"></script>
+
+</body>
+
+</html>
